@@ -3,6 +3,15 @@
     "name": "Banana",
     "description": "More accurately track code snippets in GitHub PR diffs.",
     "version": "0.0.0",
+    "icons": {
+        "128": "icons/128x128.png"
+    },
+    "browser_action": {
+        "default_icon": {
+            "32": "icons/32x32.png",
+            "64": "icons/64x64.png"
+        }
+    },
     "content_scripts": [
         {
             "matches": ["https://*/*/pull/*/files",
