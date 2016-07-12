@@ -33,20 +33,24 @@ if ("https://github.com" === window.location.origin) {
     });
     $(minus_alphanum_lines).each(function(index, line) {
         if ($.inArray(line, plus_alphanum_lines) !== -1) {
-            $(alphanum_text_to_element_plus[line]).each(function(i, plus_line) {
-                if (plus_line.className.indexOf("code-banana-orange") === -1) {
-                    plus_line.className = "blob-code blob-code-banana-orange";
-                }
-            });
+            if (alphanum_text_to_element_plus[line].length <= 3) {
+                $(alphanum_text_to_element_plus[line]).each(function(i, plus_line) {
+                    if (plus_line.className.indexOf("code-banana-orange") === -1) {
+                        plus_line.className = "blob-code blob-code-banana-orange";
+                    }
+                });
+            }
         }
     });
     $(minus_lines).each(function(index, line) {
         if ($.inArray(line, plus_lines) !== -1) {
-            $(line_text_to_element_plus[line]).each(function(i, plus_line) {
-                if (plus_line.className.indexOf("code-banana-yellow") === -1) {
-                    plus_line.className = "blob-code blob-code-banana-yellow";
-                }
-            });
+            if (line_text_to_element_plus[line].length <= 3) {
+                $(line_text_to_element_plus[line]).each(function(i, plus_line) {
+                    if (plus_line.className.indexOf("code-banana-yellow") === -1) {
+                        plus_line.className = "blob-code blob-code-banana-yellow";
+                    }
+                });
+            }
         }
     });
 }
